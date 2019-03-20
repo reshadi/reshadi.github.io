@@ -1,0 +1,356 @@
+﻿html {
+  padding: 0px;
+  margin: 0;
+  height: 100%;
+  border: none;
+}
+
+body {
+  /*
+    background-color:#808080;
+    background: url(images/backg.gif);
+    direction:ltr;
+    text-align: center;
+    padding: 0px;
+*/
+  margin-top: 0cm;
+  margin-left: 1cm;
+}
+
+.Normal {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  color: #534741;
+}
+
+
+/********** Menu **********/
+
+.Menu {
+  /*font-size: 10pt;*/
+  padding: 5px;
+  margin: 5px;
+  list-style-type: none;
+  background-color: navy;
+  color: white;
+}
+
+.Menu a {
+  font-size: medium;
+  color: white;
+  text-decoration: none;
+}
+
+.Menu a:hover {
+  color: black;
+  background-color: orange;
+}
+
+.Menu a.active {
+  color: black;
+  background-color: orange;
+  cursor: default;
+}
+
+#HomeBody #HomeMenu,
+#ContactBody #ContactMenu,
+#ResumeBody #ResumeMenu,
+#PublicationsBody #PublicationsMenu,
+#ProjectsBody #ProjectsMenu,
+#AboutBody #AboutMenu,
+#LinksBody #LinksMenu {
+  color: black;
+  background-color: orange;
+  color: #fff;
+  cursor: default;
+  /*
+    background: url(images/thbg.gif) repeat-x;
+    border: 1px solid #998675;
+*/
+}
+
+#LinksMenu {
+  visibility: hidden
+}
+
+.Header {
+  font-size: 10pt;
+  color: #534741;
+}
+
+table.Header {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#HeaderRightCel {
+  width: 100%;
+}
+
+td.Header {
+  padding: 7px;
+  font-size: 10pt;
+  height: 250px;
+}
+
+td.HeaderSeparator {
+  width: 100%;
+  height: 25px;
+  border-collapse: collapse;
+  background: url(images/headerbg.gif) repeat-x right top;
+}
+
+span.Name {
+  font-size: 20pt;
+  color: #FF8B1A;
+}
+
+span.tiny {
+  font-size: 8pt;
+}
+
+table.Contents {
+  width: 100%;
+  height: 100%;
+  border-spacing: 0;
+}
+
+table.InnerText {
+  font-size: 9pt;
+  color: #534741;
+  width: 100%;
+  border: 0px solid #FFFFFF;
+  border-collapse: collapse;
+}
+
+table.InnerText th {
+  font-size: 8pt;
+  color: #ffffff;
+  text-align: left;
+  border: 1px solid #998675;
+  padding: 4px;
+  background: url(images/thbg.gif) repeat-x;
+  background-position: bottom;
+  background-color: #736257;
+}
+
+table.InnerText td {
+  text-align: justify;
+  padding: 9px;
+}
+
+table.InnerText tr td ul {
+  list-style-image: url("images/bullet.gif");
+}
+
+table.thumbnail {
+  font-size: 9pt;
+  color: #534741;
+  width: 100%;
+  border: 0px solid #FFFFFF;
+  border-collapse: collapse;
+}
+
+table.thumbnail th {
+  font-size: 8pt;
+  color: #ffffff;
+  text-align: left;
+  border: 1px solid #998675;
+  padding: 4px;
+  background: url(images/thbg.gif) repeat-x;
+  background-position: bottom;
+  background-color: #736257;
+}
+
+table.thumbnail td {
+  border: 0px;
+  text-align: center;
+  padding: 5px;
+}
+
+td.Main {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  text-align: left;
+  padding: 6px;
+}
+
+.LeftBar {
+  font-size: 8pt;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+td.LeftBar {
+  width: 150px;
+  padding: 4px;
+  vertical-align: top;
+  border-right: 1px dotted #998675;
+}
+
+.LeftBar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.LeftBar li {
+  margin: 2px;
+  padding: 0px;
+  text-align: left;
+}
+
+.LeftBar a {
+  width: 135px;
+  text-decoration: none;
+  color: #534741;
+  display: block;
+  padding: 4px;
+  border: 1px solid #c7b299;
+  background: #c7b299 url(images/leftbarbg.gif) repeat-x;
+}
+
+.LeftBar a:visited {
+  color: #534741;
+}
+
+.LeftBar a:hover {
+  color: #ffffff;
+  background-color: #736357;
+  border: 1px solid #ffaa00;
+  background: url(images/leftbarbg_over.gif) repeat-x;
+}
+
+
+/****** Resume styles ******/
+
+.Resume {
+  font-family: Arial, "Courier New", Courier;
+  font-size: 10pt;
+  color: #534741;
+  text-align: justify;
+}
+
+.Resume table {
+  font-size: 10pt;
+  margin-left: 30px;
+  border: 0px;
+  width: 100%;
+}
+
+td.Resume {
+  vertical-align: top;
+  padding-top: 4px;
+  width: 100%;
+  text-align: left;
+  padding-right: 15px;
+  padding-left: 20px;
+}
+
+td.Resume ul {
+  list-style: none outside url("images/bullet.gif");
+}
+
+td.Resume ul li {
+  margin-left: 0px;
+  margin-bottom: 5px;
+  text-align: justify;
+}
+
+p.SubTitle {
+  font-weight: bold;
+}
+
+p.Title {
+  text-align: center;
+  font-family: Arial;
+  font-size: 16pt;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+table.Course {
+  font-size: 10pt;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: 0px;
+  border-collapse: collapse;
+}
+
+table.Course td ul li {
+  margin-bottom: 0px;
+}
+
+
+/********** Publications **********/
+
+span.pubAuthor {
+  font-weight: normal;
+}
+
+span.pubName {
+  font-weight: bold;
+}
+
+span.pubMedia {
+  font-style: italic;
+}
+
+span.pubDate{
+  font-style: normal;
+}
+
+span.bookPublisher{
+  font-style: normal;
+}
+
+span.bookName{
+  font-style: italic;
+}
+
+/**********
+
+
+a {color: #bf5827;}
+
+a:hover {color: #ff0000;}
+
+
+
+table.Page {
+    margin: 0px auto;
+
+    width: 800px;
+
+    height: 100%;
+
+    border: 1px solid #c7b299;
+
+    border-collapse: collapse;
+
+    background-color: #ffffff;
+    text-align: left;
+
+}
+
+
+
+table.WidePage {
+
+    width: 1000px;
+
+    height: 100%;
+
+    margin:0 auto;
+
+    border: 1px solid #B7BADB;
+
+    border-collapse: collapse;
+
+    background-color: #ffffff;
+
+}
+**********/

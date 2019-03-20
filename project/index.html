@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <title>Mehrdad Reshadi&#39;s Projects</title>
+  <link href="../resource/styles.css" type="text/css" rel="stylesheet" />
+  <script src="../lib/app.js" async="async"></script>
+</head>
+
+<body id="ProjectsBody">
+  <div class="Menu"></div>
+  <b>The following is a list of some academic and professional projects that I have done or have been involved in.</b>
+  <h2>
+    <a href="http://www.cecs.uci.edu/~nisc" name="NISC">NISC</a>: No-Instruction-Set-Computer
+  </h2>
+  <p>
+    Due to their tight area, power, cost, or performance constraints, embedded systems are customized and optimized for a particular
+    application or class of applications. Shrinking time-to-market and product lifetime on one hand and increasing cost of
+    manufacturing on the other hand are major challenges for designing custom systems. To address these challenges, a practical
+    design methodology must support design reuse, reprogrammability, and customization. Today most embedded systems use a
+    combination of (1) general-purpose processors (software paradigm) and (2) function-specific ASIC components (hardware
+    paradigm). Each paradigm requires different set of tools and skills and having them work together adds an extra level
+    of complexity to the design of embedded systems. Additionally, the two sets of components provide either flexibility
+    or performance, but not both.
+    <br /> Custom processors achieve a tradeoff between flexibility and performance by executing an application program on a datapath
+    that is customized for that application or class of applications. They provide a uniform paradigm in which the designer
+    can easily control and customize the performance and flexibility of every function of the system. Custom processors can
+    potentially simplify the design of embedded systems significantly if they could become the dominant type (and ideally
+    the only type) of computing component in embedded systems. Today, the available custom processor technologies are in
+    fact variations of general-purpose processors. When compared to function-specific ASIC components, these processors are
+    still too complex and impose extra unnecessary cost and performance overhead. This overhead limits the application of
+    custom processors and prevents them from replacing ASIC components. Considering the rising share of embedded systems
+    in electronics market as well as the increasing reliance of other technical fields on specialized or embedded systems,
+    extremely customized processors will become an interesting area of research with enough challenging problems as well
+    as funding opportunities.
+    <br /> The goal of my PhD research is to expand the scope of customizations in custom-processors to efficiently implement a
+    larger spectrum of designs from very specific ASIC components up to general purpose processing components. To achieve
+    this goal, I have been working on a new design methodology in which, first the concept of instruction-set is removed
+    from the processors and then, traditional compiler and synthesis techniques are combined in order to translate high-level
+    application descriptions into low-level hardware implementations. This design methodology is called No-Instruction-Set-Computing
+    (NISC).
+    <br /> In my PhD research, I have been working mainly on three aspects of NISC technology. First, I designed the NISC architecture
+    and determined its execution semantics; second, I defined how to model and capture a NISC processor; and third, I developed
+    a C compiler that compiles a program on a given NISC processor model. A NISC processor has no instruction abstraction
+    and can be considered as a variation of statically-scheduled horizontal-microcoded machines. It can also be considered
+    as an ultimate VLIW machine in which instead of having a few instructions running in parallel, every resource of the
+    processor can be controlled and executed in parallel; so, more parallelism is achieved using fewer bits in the program
+    memory. In the absence of instruction-set, an instruction decoder is no longer necessary, and hence its area, power,
+    and performance overhead, is eliminated from the processor. The compiler that I have developed uses a detailed structural
+    model of a NISC processor and maps the input C application directly on the datapath. It then generates the control words
+    that control the datapath in each clock cycle.
+    <br /> To create a working compiler that covers the complete C syntax and also enables practical use of NISC in a system, I
+    had to solve several challenging problems. Many of these problems were new because the NISC compiler had to combine the
+    capabilities of a traditional C compiler with that of a hardware synthesis tool. For example, the scheduling algorithms
+    in the VLIW domain are not concerned with the very low-level details of the underlying hardware. On the other hand, the
+    scheduling algorithms in the high-level-synthesis field assume that the target datapath is not fixed and hence they allocate
+    extra hardware resources to simplify the algorithm. Therefore, none of the existing scheduling algorithms were applicable
+    to NISC and I had to develop a new scheduling algorithm that considers every low-level hardware detail of a given fixed
+    datapath. In fact, this new algorithm can be considered as a C-to-RTL synthesis approach in which in addition to standard
+    resource and storage constraints, the interconnect constraints are also considered. Another example of such problems
+    is that absence of assembly instructions in NISC requires low-level software, such as interrupt routine, device driver,
+    or IO, to be completely written in C. To solve this problem I added special features to the compiler that enables direct
+    access to the underlying hardware resources via pre-bound variables and functions.
+    <br /> In collaboration with my colleague
+    <a href="http://www.gorjiara.com">Bita</a>, we have developed a specification format for modeling a NISC processor and retargeting the tools for compiling
+    applications and generating HDL for simulation and synthesis of final hardware. We have developed a framework that integrates
+    different NISC tools. It gets the model of a NISC processor plus the program C code and generates different outputs including
+    simulatable and synthesizable Verilog RTL of the entire system. It also generates different views of the processor pipeline
+    status used for debugging and evaluation of the results. A web-based interface for this framework is publicly available
+    at
+    <a href="http://www.cecs.uci.edu/~nisc">NISC Technology Website</a>. The current specification format and the tool-set also support a system consisting of multiple
+    NISC processors.
+    <br />
+  </p>
+  <h2>
+    <a name="ReXSim">ReXSim: Retargetable fast Microarchitecture Simulation</a>
+  </h2>
+  <p>
+    Simulators are necessary for developing processors or embedded applications. Developing high performance simulators is not
+    trivial. Retargetable simulators avoid the long and tedious re-developments for new processors by using a processor model
+    as input and generating the simulator automatically. The goal of ReXSim was to develope high performance micro-processor
+    simulation techniques for both instruction-set simulation and cycle-accurate simulation. In retargetable instruction-set
+    simulation domain, I have developed a modeling approach that captures the behavior of a processor’s instruction-set in
+    a very concise and intuitive way. Using this modeling approach, I developed a hybrid simulation technique that combined
+    interpretive and compiled simulation algorithms. After developing a retargetable instruction-set simulation framework,
+    I generated simulators for ARM and SPARC processors which were up to 2 times faster than their state-of-the-art counterparts.
+    This work has won a Best Paper Award and is now pending a US patent. In retargetable cycle-accurate simulation domain,
+    I developed a new generic pipelined processor modeling approach that was based on Colored Petri Nets and could generate
+    very fast cycle-accurate simulators. We showed that this formal technique could model a wide range of processor architectures
+    including RISC, CISC, VLIW and SuperScalar. I generated the cycle-accurate simulators of StrongARM and XScale processors
+    which ran 15 times on average faster than the very popular SimpleScalar simulator for ARM.
+  </p>
+  <h2>
+    <a href="http://www.ics.uci.edu/~spark/" target="_blank">SPARK</a>: A Parallelizing Approach to the High-Level Synthesis of Digital Circuits
+  </h2>
+  <p>
+    SPARK is a C-to-VHDL high-level synthesis framework that employs a set of innovative compiler, parallelizing compiler, and
+    synthesis transformations to improve the quality of high-level synthesis results.
+    <br /> I developed the data dependency analysis of this project and reformat the whole project into a more modular, more manageable
+    and object oriented one.
+    <br />
+  </p>
+  <h2>CHIRE: Compiled HDL Intermediate Representation with Extensibility</h2>
+  <p>
+    Being a revision of AIRE/CE, CHIRE was an extensible platform-independent intermediate format for capturing designs written
+    in VHDL. I was one the two main developers of this object-oriented format which was then used by several other tools
+    in our group. I used it to develop a simple logic synthesis tools, while my colleagues used it in their VHDL Compiler
+    and VHDL Simulator.
+    <br /> The CHIRE format also had binary, text, and XML file representations.
+  </p>
+</body>
+
+</html>

@@ -1,8 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
+
 <head>
-	<script type="text/javascript" src="./test.js"></script>
+  <title>Mehrdad Reshadi</title>
+  <link href="resource/styles.css" type="text/css" rel="stylesheet" />
+  <script src="./lib/app.js" async="async"></script>
 </head>
-<body>
-	Hello there
+
+<body id="HomeBody">
+  <div class="Menu"></div>
+  <table cellspacing="5" cellpadding="5" border="0">
+    <tr>
+      <td style="width:200px">
+        <img height="250" width="138" src="resource/mehrdad.jpg" alt="Mehrdad Reshadi" />
+      </td>
+      <td>
+        <h1>Mehrdad Reshadi,
+          <small>PhD</small>
+        </h1>
+        <h3>Principal Software Engineer / Architect,</h3>
+        <p>
+          <a href="http://www.instartlogic.com">Instart Logic.</a>
+        </p>
+        <p>
+          <b>Email: </b>
+          <span style="font-weight:bolder">mehrdad#reshadi.com</span>
+          <br/>
+          <span style="font-size:small">(Please replace # with @)</span>
+          <br/>
+          <br/>
+          <!--<span style="vertical-align:bottom"><img src="library/images/mehrdad.gif" height="20" width="220" alt="mehrdad<>reshadi.com"/></span>-->
+          <!--<b>Phone: </b> <span> (949) 824-4928</span>-->
+          <!-- <a href="http://maps.google.com/maps?q=reshadi" target="_blank">Location on map</a> -->
+        </p>
+      </td>
+    </tr>
+  </table>
+  <div>
+    <h3>Skills & Interests:</h3>
+    <section>
+      <p>I have been working with web technologies since DHTML days and might know a thing a two about related languages:
+        <ul>
+          <li>HTML</li>
+          <li>XML</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>C#</li>
+        </ul>
+        as well as their associated runtims:
+        <ul>
+          <li>Web Browsers</li>
+          <li> Web Application Servers (nodejs, asp.net)</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <p>
+        Academically, my general area of interest has been compilers, runtimes, and
+        <a href="https://www.instartlogic.com/blog/compilation-strategies-web-content-delivery">their application in various levels.</a>
+      </p>
+    </section>
+    <section>
+      <p>
+        At Instart Logic, I'm focused on web technologies and web application infrastructure.
+        <br/> I've built a
+        <a href="https://www.instartlogic.com/blog/faster-web-performance-using-virtualization-in-the-browser">JavsScript based virtualization</a>
+        platform in the browser called
+        <a href="https://www.instartlogic.com/technology/end-to-end-platform/nanovisor">Nanovisor</a>
+        <br/> , and have been deeply involved in the design of other optimizations such as
+        <ul>
+          <li>
+            <a href="https://www.instartlogic.com/blog/extreme-image-performance-finding-best-way-image-delivery">optimized image delivery techniques.</a>
+          </li>
+          <li>
+            <a href="https://www.instartlogic.com/products/cloud-application-performance/html-streaming">HTML Streaming</a> for faster delivery non-cacheable HTML
+          </li>
+          <li>
+            <a href="https://www.instartlogic.com/products/cloud-application-performance/javascript-streaming">JavsScript Streaming</a> for delivery of only active parts of JavsScript code
+          </li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <p>
+        At Qualcomm, I led the development of a
+        <a href="https://github.com/reshadi/mcjs">parallel JavaScript JIT compiler</a> that
+        <ul>
+          <li>sits on top of .NET CLR</li>
+          <li>uses task parallelism to optimize code in parallel</li>
+          <li>uses dynamic type-inference to reduce type-guard overhead</li>
+          <li>uses dynamic function overloading based on argument types</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      During my PhD at
+      <a href="http://www.uci.edu/">UC Irvine</a>, I worked on
+      <a href="projects/index.html">various aspects</a> embedded system design, including:
+      <ul>
+        <li>Architecture and Compiler for Embedded Systems</li>
+        <li>Digital and Microprocessor Simulation</li>
+        <li>High level synthesis</li>
+        <li>Architecture Description Languages (ADL) and ADL-based exploration</li>
+      </ul>
+      As part of the
+      <span style="color:maroon">
+        <a href="http://www.cecs.uci.edu/~nisc">NISC</a> (No Instruction-Set Computer)</span> project, I developed a "cycle accurate compiler" for the NISC toolchain
+      to map and compile C programs on custom datapaths. The tool was also used for automatically generating custom datapaths
+      for a given program. Read
+      <a href="projects/projects.html#NISC">more ...</a>
+    </section>
+  </div>
+
+  <p>
+    For a complete list please see my
+    <!-- <a href="resume/cv.pdf">CV</a> -->
+    <a href="resume/resume.pdf">resume</a>
+    and list of my
+    <a href="publication/index.html"> patents and publication</a>
+  </p>
+  </div>
+  <div>
+    <!-- # include virtual="library/counters/frame.html" -->
+    <!--
+    <hr />
+    <iframe scrolling="no" frameborder="0" height="50" width="100%" src="library/counters/index.html"> </iframe>
+  -->
+  </div>
 </body>
+
 </html>
