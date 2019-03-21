@@ -1,0 +1,35 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="output"></div>
+    <script>
+        (function () {
+            var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            if (connection) {
+                var type = connection.effectiveType;
+                var output = document.getElementById("output");
+                function updateConnectionStatus() {
+                    var message = "Connection type changed from " + type + " to " + connection.effectiveType;
+                    console.log(message);
+                    output.innerHTML += message + "<br/><pre>" + JSON.stringify({
+                        downlink: connection.downlink,
+                        effectiveType: connection.effectiveType,
+                        rtt: connection.rtt,
+                        saveData: connection.saveData,
+                    }, null,  "  ") + "</pre><br/>";
+
+                }
+
+                connection.addEventListener('change', updateConnectionStatus);
+
+                updateConnectionStatus();
+            }
+        })()
+    </script>
+</body>
+
+</html>
