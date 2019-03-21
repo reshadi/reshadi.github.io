@@ -33,12 +33,22 @@
                 print("No connection info");
             }
 
+            var resource = location.href;
             var xhr = new XMLHttpRequest();
             var t1 = performance.now();
-            xhr.open("GET", location.href, false);
+            xhr.open("GET", resource, false);
             xhr.send();
             var t2 = performance.now();
-            print("Download time: " + (t2 - t1));
+            var len = xhr.getResponseHeader('content-length');
+            print("Size: " + len + " bytes, Download time: " + (t2 - t1) + "ms, speed: " + len / (t2 - t1));
+            window.addEventListener("load", function () {
+                var timings = performance.getEntriesByName(resource);
+                timings.forEach(function (t) {
+                    var delta = t.responseEnd - t.resourceStart;
+                    var len = t.encodedBodySize;
+                    print("Encoded size: " + len + " bytes, Download time: " + delta + "ms, speed: " + len / delta);
+                });
+            });
 
         })()
     </script>
