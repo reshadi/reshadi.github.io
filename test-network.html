@@ -8,26 +8,38 @@
     <div id="output"></div>
     <script>
         (function () {
+            var output = document.getElementById("output");
+            function print(str) {
+                console.log(str);
+                output.innerHTML += str + "<br/>";
+            }
             var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
             if (connection) {
                 var type = connection.effectiveType;
-                var output = document.getElementById("output");
                 function updateConnectionStatus() {
                     var message = "Connection type changed from " + type + " to " + connection.effectiveType;
-                    console.log(message);
-                    output.innerHTML += message + "<br/><pre>" + JSON.stringify({
+                    print(message + "<br/>\n<pre>" + JSON.stringify({
                         downlink: connection.downlink,
                         effectiveType: connection.effectiveType,
                         rtt: connection.rtt,
                         saveData: connection.saveData,
-                    }, null,  "  ") + "</pre><br/>";
-
+                    }, null, "  ") + "</pre>");
                 }
 
                 connection.addEventListener('change', updateConnectionStatus);
 
                 updateConnectionStatus();
+            } else {
+                print("No connection info");
             }
+
+            var xhr = new XMLHttpRequest();
+            var t1 = performance.now();
+            xhr.open("GET", location.href, false);
+            xhr.send();
+            var t2 = performance.now();
+            print("Download time: " + (t2 - t1));
+
         })()
     </script>
 </body>
