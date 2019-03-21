@@ -39,12 +39,13 @@
             xhr.open("GET", resource, false);
             xhr.send();
             var t2 = performance.now();
+            var delta = t2 - t1;
             var len = xhr.getResponseHeader('content-length');
-            print("Size: " + len + " bytes, Download time: " + (t2 - t1) + "ms, speed: " + len / (t2 - t1));
+            print("Size: " + len + " bytes, Download time: " + delta + "ms, speed: " + len / delta);
             window.addEventListener("load", function () {
                 var timings = performance.getEntriesByName(resource);
                 timings.forEach(function (t) {
-                    var delta = t.responseEnd - t.resourceStart;
+                    var delta = t.responseEnd - t.responseStart;
                     var len = t.encodedBodySize;
                     print("Encoded size: " + len + " bytes, Download time: " + delta + "ms, speed: " + len / delta);
                 });
